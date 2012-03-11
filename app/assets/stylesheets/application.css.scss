@@ -1,0 +1,161 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+#banner {
+  background: #ABC8E2;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 24px/40px "Times New Roman", serif;
+  color: #375D81;
+  
+
+  img {
+    float: left;
+    margin-top:-17px;
+  }
+}
+
+#footer{
+ background: #797C7E;
+  padding: 10px;
+  border-top: 2px solid;
+  color: #375D81;
+  text-align: center;
+  border-color: #000;
+  clear:both;
+ }
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  background: #375D81;
+
+  #main {
+    float: left;
+    padding: 1em;
+    background: white;
+    width: 62%;
+  }
+
+  #sideright {
+
+         padding: 1em 2em;
+         width: 13em;
+         background: #375D81;
+     	list-style: none;
+     	float:right;
+     }
+
+ #rightside {
+ #cart {
+		font-size: smaller;
+		color: white;
+	    padding-left: 1061px;
+	    height: 845px;
+		table {
+			border-top: 1px dotted #595;
+			border-bottom: 1px dotted #595;
+			margin-bottom: 10px;
+			
+			
+		}
+ }
+ }
+ 
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 14%;
+    background: #375D81;
+	list-style: none;
+
+	form, div {
+		display: inline;
+	}
+	
+	input {
+		font-size: small;
+	}
+	
+	#cart {
+		font-size: smaller;
+		color: white;
+		table {
+			border-top: 1px dotted #595;
+			border-bottom: 1px dotted #595;
+			margin-bottom: 10px;
+		}
+	}
+    
+   
+    ul {
+      padding: 0;
+     
+      
+      li {
+            background: none repeat scroll 0 0 #DDEFDD;
+            border-bottom: 1px solid;
+            border-color:#375D81;
+            color: #e2e2e2;
+            list-style: none;
+            padding: 3px 1px 9px 19px;
+        a {
+          color: #375D81;
+          font-size: small;
+         
+        }
+         &:hover {
+            color: #fff;
+            background-color: #000; }
+      }
+    }
+  }
+}
+
+.depot_form {
+    fieldset {
+        background: #D8E3F2;
+        legend {
+            color: #D8E3F2;
+            background: #375D81;
+            font-family: sans-serif;
+            padding: 0.2em 1em;
+        }
+    }
+    form {
+    label {
+        width: 5em;
+        float: left;
+        text-align: right;
+        padding-top: 0.2em;
+        margin-right: 0.1em;
+        display: block;
+    }
+    
+    select, textarea, input {
+        margin-left: 0.5em;
+    }
+    br {
+        display: none
+        }
+    }
+}
+
+

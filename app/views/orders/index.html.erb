@@ -1,0 +1,53 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th>Contactno</th>
+    <th>Mobileno</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr class="<%= cycle('list_line_odd','list_line_even') %>">
+    <td class="list_description">
+      <dl>
+          <dt> <%= order.name %></dt>
+		  <dd><%= strip_tags(order.address1)%></dd>
+          <dd><%= strip_tags(order.address2)%></dd>
+      </dl>
+    </td>
+    
+    <td><%= order.city %></td>
+    <td><%= order.state %></td>
+    <td><%= order.country %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= order.contactno %></td>
+    <td><%= order.mobileno %></td>
+    
+    	<td class="list_action">
+		<%= link_to 'Show', order %></br>
+		<%= link_to 'Edit', edit_order_path(order)  %></br>
+    	<%= link_to 'Destroy', order, 
+				:confirm => 'Are you sure?', 
+				:method => :delete %>
+		</td>
+		
+		
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>
+
+<%= will_paginate @orders %>

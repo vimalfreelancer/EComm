@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>	<%= image_tag @special.photo.url,:width=>"200px" %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @special.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @special.description %>
+</p>
+
+<p>
+  <b>Oldprice:</b>
+  <%= @special.oldprice %>
+</p>
+
+<p>
+  <b>Discount:</b>
+  <%= @special.price %>
+</p>
+
+
+<%= link_to 'Back', specials_path %>

@@ -1,0 +1,78 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :Billing_address %><br />
+    <%= f.text_area :address1,:cols => 40,:rows => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_area :address2,:cols => 40,:rows => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email,:size => 40 %>
+  </div>
+ <!-- <div class="field">
+    < %= f.label :pay_type %><br />
+    < %= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => 'Select a payment method' %>
+  </div> -->
+  <div class="field">
+    <%= f.label :contactno %><br />
+    <%= f.text_field :contactno %>
+  </div>
+  <div class="field">
+    <%= f.label :mobileno %><br />
+    <%= f.text_field :mobileno %>
+  </div>
+  
+  <div class="field">
+      <%= f.label :card_type %><br />
+      <%= f.select :card_type, [["Visa","visa"],["MasterCard","master"],["Discover","discover"],["American Express","american_express"]] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :card_number %><br />
+    <%= f.text_field :card_number %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :card_verification, "Card Verification Value (CVV)" %><br />
+    <%= f.text_field :mobileno %>
+  </div>
+  
+  <div class="field">
+      <%= f.label :card_expires_on %><br />
+      <%= f.date_select :card_expires_on,:discard_day => true,:start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Place Order' %>
+  </div>
+<% end %>

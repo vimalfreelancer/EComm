@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>	<%= image_tag @product.photo.url,:width=>"200px" %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @product.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<%= button_to 'Add to Cart',line_items_path(:product_id => @product), :remote => true%>
+

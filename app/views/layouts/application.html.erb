@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ECommerce Retail Website</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %> 
+  
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= controller.controller_name %>'>
+	<div>
+	    <div id="banner">
+		   <div>
+		    <%= @page_title || "ECommerce Retail Site"%>
+		    </div>
+		    <div style="float:right;">
+		    <a href="http://www.facebook.com/Macys"><%= image_tag("co_facebookIcon.gif") %></a>
+		    </div>
+	    </div>
+	    <div id="columns">
+		    <div id="side">
+		    <ul>
+			    <li><%= link_to 'Home', store_url %> </li>
+			    <li><a href="http://www.google.com">Question</a></li>			
+			    <li><%= link_to 'Special',specialoffers_url %> </li>
+			    <li><a href="pages/contact">Contact</a></li>
+		    </ul>
+		
+		    <% if session[:user_id] %>
+		        <ul>
+		            <li><%= link_to 'Orders', order_path %> </li>
+		            <li><%= link_to 'Products', products_path %> </li>
+		            <li><%= link_to 'Users', users_path %> </li>
+		        </ul>
+		    <% end %>
+		
+		    <ul>
+		        <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_preferred_1"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_preferred_3"></a>
+                    <a class="addthis_button_preferred_4"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                </div>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f4feaa25da4fd45"></script>
+                <!-- AddThis Button END -->
+		    </ul>
+		    <ul>
+		        
+		    </ul>
+		</div>
+	
+		<div id="main">
+			<%= yield %>
+    	</div>
+        
+        <div id="rightside">
+            <% if @cart %>
+			    <%= hidden_div_if(@cart.line_items.empty?,:id=>'cart') do %>
+				    <%= render @cart %>
+			    <% end %>
+		    <% end %>
+        </div>
+        
+  	</div>
+  		
+  		<div id="footer"> 
+    	    All rights reserved by <a href="http://Retailstore.com/">Retailstore.com</a>
+    	<div>
+    	    
+    </div>
+    
+    
+</body>
+</html>

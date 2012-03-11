@@ -1,0 +1,37 @@
+<%= form_for(@special) do |f| %>
+  <% if @special.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@special.errors.count, "error") %> prohibited this special from being saved:</h2>
+
+      <ul>
+      <% @special.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description ,:cols => 40,:rows => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :oldprice %><br />
+    <%= f.text_field :oldprice %>
+  </div>
+  <div class="field">
+    <%= f.label :discount %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div>
+    <%= f.label :photo, "Photo"%> <br />
+  	<%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

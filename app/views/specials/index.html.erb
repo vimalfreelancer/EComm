@@ -1,0 +1,23 @@
+<h1>Listing specials</h1>
+
+<% if notice %>
+	<p id="notice">
+		<%= notice %>
+	</p>
+<% end %>
+
+<% @specials.each do |special| %>
+	<div class="entry">
+		<%= image_tag special.photo.url %>
+		<h3> <%= link_to special.title, special %></h3>
+	    <p><%= sanitize(special.description) %></p>
+		<div class="price_line">
+		<span class="price"><%= number_to_currency(special.oldprice) %></span>
+		<span>Now</span>
+		<span class="price"><%= number_to_currency(special.price) %></span>
+		<%= button_to 'Add to Cart',line_items_path(:special_id => special), :remote => true%>
+		
+		</div>
+	</div>
+<% end%>
+

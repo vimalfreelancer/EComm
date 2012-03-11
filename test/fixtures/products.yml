@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Ruby
+  description: This is the best cake i ever tasted
+  image_url: cake.png
+  price: 90.99
+
+two:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 91.99
+
+ruby: 
+  title: vanilla cake
+  description: its good cake
+  price: 23.34
+  image_url: ruby.png

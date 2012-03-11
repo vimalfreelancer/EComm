@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Vimal maisuria
+  address1: fremont
+  address2: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  email: vimal@gmail.com
+  pay_type: MyString
+  contactno: MyString
+  mobileno: MyString
+
+two:
+  name: Manoj vidyarthi
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  email: manoj@gmail.com
+  pay_type: MyString
+  contactno: MyString
+  mobileno: MyString
